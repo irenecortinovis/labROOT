@@ -23,6 +23,7 @@ class data {
 		void imposta(int day, int month, int year);
 
 		bool valida() const;
+		int n_giorni() const;
 		int diff_giorni(const data other) const;
 		string giorno_settimana() const;
 
