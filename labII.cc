@@ -17,6 +17,7 @@ TApplication* Grafica = new TApplication("Grafica", 0, NULL);
 Grafica->Run();
 */
 
+//returns a random number from uniform distribution between min and max
 //	srand(time(NULL));
 double rand_range(double min, double max){
 	return min + (max - min) * rand() / (RAND_MAX);
@@ -176,7 +177,7 @@ TF1* student_PDF(int dof)
 	double gammaNum1 = tgamma((double) (dof+1)/2);
 	double gammaNum2 = tgamma((double) (dof)/2);
 
-	TF1* student = new TF1("student","1/sqrt(pi*x) * [1]/[2] * 1/(pow((1+x*x/[0]),(([0]+1)/2)))",0,30);
+	TF1* student = new TF1("student","1/sqrt(pi*x) * ([1]/[2]) * 1/(pow((1+x*x/[0]),(([0]+1)/2)))",-30,30);
 	student->SetParameter(0, dof);  
 	student->SetParameter(1, gammaNum1);  
 	student->SetParameter(2, gammaNum2);  

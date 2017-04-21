@@ -17,7 +17,7 @@ c++ ../../labII.cc ../Code/chisquare.cpp -o chisquare.o `root-config --cflags --
 int main(){
 	
 	TApplication* Grafica = new TApplication("Grafica", 0, NULL);
-	int gdl = 3;
+	int gdl = 100;
 
 	TCanvas* c1 = new TCanvas("c1", "Il mio canvas");
 	chi2_PDF(gdl)->Draw();

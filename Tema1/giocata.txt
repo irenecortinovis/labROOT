@@ -1,0 +1,13 @@
+Roma		Hellas-Verona	1
+Atalanta	Juventus	2
+Avellino	Livorno		1
+Bologna		Cittadella	1
+Crotone		Vicenza		X
+Latina		Ternana		X
+Modena		Spezia		1
+Perugia		Brescia		1
+Pro-Vercelli	Frosinone	X
+Varese		Trapani		1
+Virtus-Entella	Carpi		1
+Cremonese	Bassano-Virtus	2
+Grosseto	Forli		X

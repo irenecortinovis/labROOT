@@ -7,7 +7,7 @@
 #include <algorithm>
 
 
-
+//returns a random number from uniform distribution between min and max
 double rand_range(double min, double max);
 //problem with min and max, because of int rounding
 int rand_range(int min, int max);
