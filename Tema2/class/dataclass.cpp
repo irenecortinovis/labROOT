@@ -158,9 +158,6 @@ int main(){
 	data megatest1(29, 2, 1888);
 	if(megatest1.valida())
 		std::cout << "date (wednesday): " << megatest1.giorno_settimana() << std::endl;
-
-
-
 	
 
 

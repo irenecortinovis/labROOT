@@ -19,13 +19,10 @@ int main(int argv, char ** argc) {
 
 	gStyle->SetOptFit(1111);
 	TCanvas* c1=new TCanvas("c1","il mio canvas");
-	//c1->Divide(1,2);
 
 	TF1 *FitFunz = new TF1 ("f1","[0]*(1-exp(-x/[1]))");
 	FitFunz->SetParameters(8,0.004);
 
-
-	//c1->cd(2);
 	TGraphErrors *gr2= new TGraphErrors("dati_TGraphErrors.txt");
 	gr2->SetMarkerSize(2);
 	gr2->SetMarkerStyle(20);

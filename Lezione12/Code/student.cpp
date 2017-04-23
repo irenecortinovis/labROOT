@@ -60,14 +60,14 @@ int main(){
 	//student distribution
 	//TF1* student = new TF1("student","TMath::Student(x,[0])", -1000, 1000);
 	//student->SetParameter(0, data[0]); 
-
-	student_PDF(gdl)->Draw();
+	int gdl = data[0];
+	//student_PDF(gdl)->Draw();
  
 
 	TCanvas* c1 = new TCanvas("z distribution");
-	//histo->Draw();
+	histo->Draw();
 	//student->Draw("same");
-	student->Draw();
+	//student->Draw();
 
 
 

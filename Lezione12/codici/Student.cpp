@@ -19,7 +19,7 @@ double const pi=3.1415926535897;
 double MyGauss (double *x, double *par){
 
         //par[0] = posizione 
-  		//par[1] = sigma => fhwm = par[2]*2.35
+  		  //par[1] = sigma => fhwm = par[2]*2.35
         double fval = 0;   
         if(par[1]>0) { 
 					fval = (x[0]-par[0])/par[1];
@@ -175,7 +175,7 @@ int main(int argc, char **argv) {
 	   t=i*step+a;
 	   probab=cdfStudent->GetBinContent(i);
 	   //~ if ((gStudent->Eval(t)-gStudent->Eval(-t))>0.682) exit;
-	   cout<<i<<" "<<probab<<" "<<t<<endl;
+	   //cout<<i<<" "<<probab<<" "<<t<<endl;
 	   if ( probab>0.159 ) break;
 	      
 	   }
