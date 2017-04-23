@@ -11,6 +11,7 @@ c++ ../Code/student.cpp ../../labII.cc -o student.o `root-config --cflags --glib
 #include <math.h>
 #include <cstdlib>
 #include <ctime>
+#include "TSystem.h"
 #include <TH1F.h>
 #include <TF1.h>
 #include <TCanvas.h>
@@ -18,12 +19,22 @@ c++ ../Code/student.cpp ../../labII.cc -o student.o `root-config --cflags --glib
 #include <TMath.h>
 #include "../../labII.h"
 
-
+/*
+double MyStudent (double *x, double *par){
+    		
+        double enne=par[0];  //par[0] = numero gradi libertà  
+        double fval = 1/sqrt(pi*par[0])*tgamma((enne+1)/2)/tgamma(enne/2);
+        fval = fval*pow(1+x[0]*x[0]/enne,-1*(enne+1)/2);
+        return fval;
+}
+*/
 
 
 int main(){
 
 	TApplication* Grafica = new TApplication("Grafica", 0, NULL);
+	gSystem->Load("libMathMore");	
+
 
 	//write a file with random numbers from gaussian distribution
 	srand(time(NULL));
@@ -53,21 +64,23 @@ int main(){
 		z = (num-data[1])/data[2];
 		histo->Fill(z);
 	}
-	infile.close();
-
-	
-
-	//student distribution
-	//TF1* student = new TF1("student","TMath::Student(x,[0])", -1000, 1000);
-	//student->SetParameter(0, data[0]); 
-	int gdl = data[0];
-	//student_PDF(gdl)->Draw();
- 
+	infile.close();   
 
 	TCanvas* c1 = new TCanvas("z distribution");
 	histo->Draw();
-	//student->Draw("same");
-	//student->Draw();
+
+	//student distribution
+	
+	int ndf = data[0];
+
+	TF1* pdfStudent = new TF1("pdfStudent", "ROOT::Math::tdistribution_pdf(x,[0])", -5,5);
+   	pdfStudent->SetParameter(0,ndf);
+
+   	TCanvas *c2 = new TCanvas("DistCanvas", "Student Distribution graphs", 10, 10, 1000, 800);
+   	pdfStudent->SetTitle("Student t distribution function");
+   	c2->cd();
+   	pdfStudent->SetLineWidth(2);
+   	pdfStudent->DrawCopy();
 
 
 
