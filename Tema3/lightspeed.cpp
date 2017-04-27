@@ -116,7 +116,7 @@ int main()
 
 	gStyle->SetOptFit(1111);
 
-	TCanvas* canvas1 = new TCanvas("w and s mean variables");
+	TCanvas* canvas1 = new TCanvas("c2");
 	canvas1->Divide(2,3);
 	
 	canvas1->cd(5);
